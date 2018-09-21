@@ -1,36 +1,31 @@
-/**
+/* File Description:
  * 
  * Initial entry for API, creates the web server
  * 
- */
+ ******************************************************************************/
 
-/**
- * Dependencies section
- **********************/
-
- const server = require('./lib/server');
- const workers = require('./lib/workers');
-
-/**
- * Main initialization section
- *****************************/
+/*  Dependencies section:
+    ---------------------   */
+    const server = require('./lib/server');
+    const workers = require('./lib/workers');
+/*  ---------------------------------------------------------- end of section */
  
- //-- Create a container for the app
- let app = {};
+/*  Main section:
+    -------------   */
 
- //-- Initialize the app and execute it
- app.init = (() => {
+    // create a container for the app
+    let app = {};
 
-    //-- Start the server
-    server.init();
+    // initialize the app and execute it
+    app.init = (() => {
+        // initialize the server and workers
+        server.init();
+        workers.init();
+    })();
 
-    //-- Start the workers
-    workers.init();
+/*  ---------------------------------------------------------- end of section */
 
- })();
-
-/**
- * Export section
- ****************/
-
- module.exports = app;
+/*  Export section:
+    ---------------   */
+    module.exports = app;
+/*  ---------------------------------------------------------- end of section */
