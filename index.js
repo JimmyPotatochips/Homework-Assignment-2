@@ -20,7 +20,7 @@
     app.init = (() => {
         // initialize the server and workers
         server.init();
-        workers.init();
+        //workers.init();
     })();
 
 /*  ---------------------------------------------------------- end of section */
